@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes - MyApp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" id="sidebar">
+    <h2 class="logo">MyApp</h2>
+    <ul class="menu">
+      <li class="menu-item"><a href="Dashboard.html">Dashboard</a></li>
+      <li class="menu-item"><a href="tasks.html">Tasks</a></li>
+      <li class="menu-item active"><a href="notes.html">Notes</a></li>
+      <li class="menu-item"><a href="#settings">Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Right Panel - Calendar -->
+  <div class="right-panel" id="rightPanel">
+    <div>
+      <div class="Calendar">Today</div>
+      <div class="panel-date" id="currentDate"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="welcome">My Notes</div>
+    <div class="date">Keep your ideas and thoughts organized</div>
+
+    <!-- Notes Grid -->
+    <div class="notes-container" id="notesContainer">
+      <!-- Add Note Card -->
+      <div class="add-note" id="addNoteBtn">
+        <span>+</span>
+        <p>Add Note</p>
+      </div>
+
+      <!-- Note Cards -->
+      <div class="note-card">
+        <div class="note-title">Meeting</div>
+        <div class="note-content">
+          Discuss project roadmap and deadlines. Review Q1 goals and allocate resources accordingly.
+        </div>
+        <div class="note-footer">
+          <span class="note-date">Jan 1, 2026</span>
+          <div class="note-actions">
+            <span class="edit-note">✏️</span>
+            <span class="delete-note">🗑️</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note Card -->
+      <div class="note-card">
+        <div class="note-title">Ideas</div>
+        <div class="note-content">
+          Mobile app design inspiration and color palette ideas. Consider dark mode implementation.
+        </div>
+        <div class="note-footer">
+          <span class="note-date">Dec 30, 2025</span>
+          <div class="note-actions">
+            <span class="edit-note">✏️</span>
+            <span class="delete-note">🗑️</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note Card -->
+      <div class="note-card">
+        <div class="note-title">Shopping</div>
+        <div class="note-content">
+          Buy groceries: milk, eggs, bread, vegetables. Don't forget coffee!
+        </div>
+        <div class="note-footer">
+          <span class="note-date">Dec 28, 2025</span>
+          <div class="note-actions">
+            <span class="edit-note">✏️</span>
+            <span class="delete-note">🗑️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
