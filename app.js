@@ -199,7 +199,61 @@ function updateTodayTasksPreview() {
     `;
     return;
   }
-  
+  function openTaskModal(taskText = '') {
+  const modal = document.createElement('div');
+  modal.className = 'task-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <h3>Add Task Details</h3>
+      <input type="text" id="modalTaskText" placeholder="Task" value="${escapeHtml(taskText)}" readonly>
+      
+      <label>Time:</label>
+      <input type="time" id="modalTaskTime">
+      
+      <label>Importance:</label>
+      <select id="modalTaskPriority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      
+      <div class="modal-buttons">
+        <button id="cancelTaskBtn">Cancel</button>
+        <button id="saveTaskBtn">Save Task</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Close modal
+  modal.querySelector('#cancelTaskBtn').addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+
+  // Save task
+  modal.querySelector('#saveTaskBtn').addEventListener('click', () => {
+    const time = modal.querySelector('#modalTaskTime').value;
+    const priority = modal.querySelector('#modalTaskPriority').value;
+    const text = modal.querySelector('#modalTaskText').value.trim();
+
+    if (!text) {
+      alert('Task text missing!');
+      return;
+    }
+
+    tasks.push({
+      id: Date.now(),
+      text,
+      time: time || null,
+      priority,
+      completed: false,
+      createdAt: new Date().toISOString()
+    });
+
+    saveTasks();
+    renderTasks();
+    modal.remove();
+  });
+}
   // Sort: incomplete first, then completed
   const sortedTasks = [...todayTasks].sort((a, b) => {
     if (a.completed !== b.completed) return a.completed ? 1 : -1;
