@@ -747,12 +747,12 @@ body{
 }
 
 .preview-task-item.completed {
-  border-left-color: #10b981;
+  border-left-color: #ec4899;
   opacity: 0.8;
 }
 
 .preview-task-item.completed:hover {
-  border-left-color: #34d399;
+  border-left-color: #ec4899;
 }
 
 .preview-task-text {
@@ -774,7 +774,7 @@ body{
 
 .preview-task-item.completed .preview-task-text::before {
   content: '✓';
-  color: #10b981;
+  color: #ec4899;
   font-size: 16px;
 }
 
@@ -794,8 +794,8 @@ body{
 }
 
 .preview-task-item.completed .preview-task-status {
-  background: #d1fae5;
-  color: #059669;
+  background: #fce8f2;
+  color: #ec4899;
 }
 
 .preview-task-item:hover .preview-task-status {
